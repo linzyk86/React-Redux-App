@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './App.css';
 import './index.css';
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -10,6 +11,8 @@ import {Provider} from 'react-redux';
 import Quote from './components/Quote';
 
 
+
+
 const logger = ({getState}) => next =>action =>{
   console.log("Dispatching action", action);
   next(action);
@@ -17,10 +20,12 @@ const logger = ({getState}) => next =>action =>{
 
 let store = createStore(reducer, applyMiddleware(logger, thunk));
 
+
+
 function App() {
   return (
     <div className="App">
-      <h1>Quotes</h1>
+      <h1>Kanye Quotes</h1>
       <Quote />
     </div>
   );
